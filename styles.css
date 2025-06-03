@@ -246,16 +246,3 @@ footer {
     position: relative;
     top: 6px;
 }
-
-/* Responsive */
-@media (max-width: 700px) {
-    .timeline-branch {
-        margin-left: 10px;
-        padding-left: 14px;
-    }
-    .timeline-branch::before {
-        left: 0;
-        width: 12px;
-        height: 18px;
-    }
-}
