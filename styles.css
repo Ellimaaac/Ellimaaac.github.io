@@ -1,0 +1,118 @@
+/* Style général */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #222;
+}
+
+/* Header et navigation */
+header {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header nav ul,
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li,
+nav ul li {
+    display: inline;
+}
+
+header nav ul li a,
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+header nav ul li a:hover,
+nav ul li a:hover {
+    background-color: #357ab8;
+}
+
+/* Main content */
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+h1, h2 {
+    color: #ffffff;
+}
+
+/* Footer */
+footer {
+    background-color: #4a90e2;
+    color: #fff;
+    text-align: center;
+    padding: 12px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Formulaire de contact */
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+form button[type="submit"] {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #357ab8;
+}
