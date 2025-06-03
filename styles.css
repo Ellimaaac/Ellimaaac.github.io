@@ -1,118 +1,169 @@
 /* Style général */
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
-    color: #222;
+    background-color: #000;
+    color: #fff;
 }
 
 /* Header et navigation */
 header {
-    background-color: #4a90e2;
+    background-color: #181818;
     color: #fff;
-    padding: 20px 0;
+    padding: 32px 0 10px 0;
     text-align: center;
+    box-shadow: 0 2px 8px #000a;
 }
 
-header nav ul,
-nav ul {
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+header nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
-header nav ul li,
-nav ul li {
+header nav ul li {
     display: inline;
 }
 
-header nav ul li a,
-nav ul li a {
+header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: background 0.2s;
+    font-size: 1.1em;
+    padding: 8px 18px 7px 18px;
+    border-radius: 7px 7px 0 0;
+    border-bottom: none; /* plus de soulignement */
+    transition: background 0.2s, color 0.2s;
 }
 
 header nav ul li a:hover,
-nav ul li a:hover {
-    background-color: #357ab8;
+header nav ul li a.active {
+    background: #fff;
+    color: #181818;
+    border-bottom: none;
 }
 
 /* Main content */
 main {
-    max-width: 800px;
-    margin: 30px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    min-height: 70vh;
+    padding: 0;
 }
 
-section {
-    margin-bottom: 32px;
+.container {
+    max-width: 800px;
+    margin: 50px auto 0 auto;
+    background: #181818;
+    padding: 40px 30px 32px 30px;
+    border-radius: 32px;
+    box-shadow: 0 4px 40px #0008;
 }
 
 h1, h2 {
-    color: #ffffff;
+    color: #fff;
+    font-family: 'Oswald', Arial, sans-serif;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 18px;
+}
+
+.desc {
+    color: #ccc;
+    font-size: 1.15em;
+    margin-bottom: 0;
 }
 
 /* Footer */
 footer {
-    background-color: #4a90e2;
+    background-color: #181818;
     color: #fff;
     text-align: center;
-    padding: 12px 0;
-    position: fixed;
+    padding: 18px 0 14px 0;
+    font-size: 1em;
+    margin-top: 40px;
+    box-shadow: 0 -2px 8px #000a;
+    position: static;
     width: 100%;
     bottom: 0;
 }
 
 /* Formulaire de contact */
-.container {
-    max-width: 500px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 18px;
 }
 
-form label {
-    display: block;
-    margin-bottom: 8px;
+.contact-form label {
+    color: #fff;
     font-weight: bold;
+    margin-bottom: 4px;
 }
 
-form input[type="text"],
-form input[type="email"],
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 18px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-    box-sizing: border-box;
-}
-
-form button[type="submit"] {
-    background-color: #4a90e2;
+.contact-form input,
+.contact-form textarea {
+    background: #232323;
     color: #fff;
     border: none;
-    padding: 12px 24px;
-    border-radius: 4px;
+    border-radius: 8px;
+    padding: 12px;
     font-size: 1em;
-    cursor: pointer;
-    transition: background 0.2s;
+    margin-bottom: 8px;
+    resize: vertical;
+    box-shadow: 0 2px 8px #0003;
 }
 
-form button[type="submit"]:hover {
-    background-color: #357ab8;
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #fff;
+}
+
+.contact-form button {
+    background: #fff;
+    color: #181818;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    margin-top: 8px;
+}
+
+.contact-form button:hover {
+    background: #232323;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .container {
+        padding: 20px 8px 18px 8px;
+        border-radius: 18px;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    main {
+        min-height: 60vh;
+    }
+    header nav ul {
+        gap: 12px;
+    }
 }
