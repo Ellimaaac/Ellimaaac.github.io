@@ -246,3 +246,19 @@ footer {
     position: relative;
     top: 6px;
 }
+
+.cv-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #fff;
+    color: #181818 !important;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    margin-top: 12px;
+}
+.cv-btn:hover {
+    background: #232323;
+    color: #fff !important;
+}
