@@ -11,8 +11,9 @@ Web Site Structure
 │   ├── publications.html     on going
 │   ├── blog.html             on going
 │   └── contact.html          AVAILABLE
-├── img                                   # Folder containing images for a webpage
-    └──...                                # Specfic Folder containing images for a specific webpage
-└── ressources                            # Folder containing resources for a webpage
+├── travaux                                   # Folder containing all my works webpages presented in travaux.html
+├── img                                       # Folder containing images for a webpage
+│   └──...                                    # Specfic Folder containing images for a specific webpage
+└── ressources                                # Folder containing resources for a webpage
 
 ```
