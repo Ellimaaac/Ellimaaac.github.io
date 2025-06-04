@@ -13,10 +13,10 @@
         <nav>
             <ul>
                 <li><a href="index.html">À Propos</a></li>
-                <li><a href="travaux.html">Mes Travaux</a></li>
-                <li><a href="publications.html">Mes Publications</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="nav/travaux.html">Mes Travaux</a></li>
+                <li><a href="nav/publications.html">Mes Publications</a></li>
+                <li><a href="nav/blog.html">Blog</a></li>
+                <li><a href="nav/contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -27,6 +27,7 @@
             Bienvenue sur mon site personnel. Je m'appelle Camille Lanfredi. 
             Je suis étudiant en double diplôme à l’ENSEA et GEM, où je me forme à la fois comme ingénieur et manager. Passionné par l’électronique, la data science et l’intelligence artificielle, j’aime explorer l’innovation technologique et ses applications concrètes. 
             <br>
+            <br>
             Découvrez mes projets, mon parcours et mes centres d'intérêt à travers ce site.
         </p>
     </div>
@@ -36,74 +37,57 @@
         <h2 style="margin-bottom: 0;">Mon Parcours</h2>
         <h3 style="margin-bottom: 0; font-weight: normal; color: #fff; font-size: 1.15em;">et activités académiques</h3>
     </div>
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-date">2020-2022</div>
-            <div class="timeline-content">DUT GEII - IUT Salon de Provence</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-date">2024-2025</div>
-            <div class="timeline-content">
-                DESMA - Grenoble Ecole de Management
-                <div class="timeline-branch">
-                    <div class="timeline-sub">
-                        MSc Managing with Data and AI 
+        <div class="serpent-h-timeline-container">
+        <svg viewBox="0 0 800 230" class="serpent-h-timeline-path">
+            <path id="serpent-h-path"
+            d="M20,120 Q120,60 220,120 Q320,180 420,120 Q520,60 620,120 Q720,180 780,120"
+            fill="none"
+            stroke="#fff"
+            stroke-width="6"
+            stroke-dasharray="24 16"
+            />
+        </svg>
+        <div class="serpent-h-timeline-events">
+            <div class="serpent-h-event" style="left:120px; top:40px;">
+                <div class="serpent-h-year">2020-2022</div>
+                <div class="serpent-h-label">DUT GEII<br><span class="serpent-h-detail">IUT Salon de Provence</span></div>
+                    <div class="serpent-h-more">
+                        <div>Diplome Universitaire de Technologie</div>
+                        <div>Génie Electrique et Informatique Industrielle</div>
+                        <div>Projet de fin d'études : Robot de Course TIXI</div>
                     </div>
-                
-                    <div class="timeline-branch">
-                        <div class="timeline-sub">
-                            Certification Microsoft Azure AI Fundamentals
-                        </div>
-                    </div>
-                    <div class="timeline-branch">
-                        <div class="timeline-sub">
-                            Certification Microsoft Power Platform Fundamentals
-                        </div>
-                    </div>
-                    <div class="timeline-branch">
-                        <div class="timeline-sub">
-                            Power BI Job Simulation
-                        </div>
+            </div>
+            <div class="serpent-h-event ensea-long" style="left:450px; top:220px;">
+                <div class="serpent-h-year">2022-2026</div>
+                <div class="serpent-h-label"> Diplôme d'Ingénieur - ENSEA <br><span class="serpent-h-detail">Spé: Electronique des Systèmes Communiquants / RF / HF</span>
+                    <div class="serpent-h-more">
+                        <div>Parcours Certifiants Recherche et Management</div>
+                        <div>Bureau des Sports - Manager de la salle de musculation (2023-2024)</div>
+                        <div>PSC1 2023</div>
+                        <div>Label Handimanagement - Companieros 2023</div>
+                        <div>Animateur de la fresque du Numérique 2023</div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-date">2022-2026</div>
-            <div class="timeline-content">
-                Diplôme d'Ingénieur - Ecole Nationale Supérieure de l'Électronique et de ses Applications
-                <div class="timeline-branch">
-                    <div class="timeline-sub">
-                        Spécialisation en Electronique des Systemes Communiquants / RF / HF
-                    </div>
-                </div>
-                <div class="timeline-branch">
-                    <div class="timeline-sub">
-                        Parcours Certifiants Recherche et Management
-                    </div>
-                </div>
-                <div class="timeline-branch">
-                    <div class="timeline-sub">
-                        Bureau des Sports - Manager de la salle de musculation de l'ENSEA 2023-2024
-                    </div>
-                    <div class="timeline-branch">
-                        <div class="timeline-sub">
-                            Prévention et Secours Civiques de niveau 1 (PSC1) 2023
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-branch">
-                    <div class="timeline-sub">
-                        Label Handimanagment - Companieros 2023
-                    </div>
-                </div>
-                <div class="timeline-branch">
-                    <div class="timeline-sub">
-                        Animateur de la fresque du Numérique 2023
-                    </div>
+            <div class="serpent-h-event gem-long" style="left:520px; top:40px;">
+            <div class="serpent-h-year">2024-2025</div>
+            <div class="serpent-h-label">DESMA - Grenoble Ecole de Management<br><span class="serpent-h-detail">MSc - Managing with Data & AI</span>
+                <div class="serpent-h-more">
+                    <div>Certification Microsoft Azure AI Fundamentals</div>
+                    <div>Certification Microsoft Power Platform Fundamentals</div>
+                    <div>Certification Power BI Job Simulation</div>
+                </div>            
+            
+            </div>
             </div>
         </div>
+        </div>
+    
 </div>
+
+
+
+
 
 
 

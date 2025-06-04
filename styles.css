@@ -7,6 +7,7 @@ body {
     color: #fff;
 }
 
+
 /* Header et navigation */
 header {
     background-color: #181818;
@@ -68,7 +69,12 @@ main {
     box-shadow: 0 4px 40px #0008;
 }
 
-h1, h2 {
+h1 {
+    color: #ffd85b;
+    font-family: 'Oswald', Arial, sans-serif;
+}
+
+h2 {
     color: #fff;
     font-family: 'Oswald', Arial, sans-serif;
 }
@@ -96,56 +102,6 @@ footer {
     position: static;
     width: 100%;
     bottom: 0;
-}
-
-/* Formulaire de contact */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin-top: 18px;
-}
-
-.contact-form label {
-    color: #fff;
-    font-weight: bold;
-    margin-bottom: 4px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    background: #232323;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 1em;
-    margin-bottom: 8px;
-    resize: vertical;
-    box-shadow: 0 2px 8px #0003;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: 2px solid #fff;
-}
-
-.contact-form button {
-    background: #fff;
-    color: #181818;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 0;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    margin-top: 8px;
-}
-
-.contact-form button:hover {
-    background: #232323;
-    color: #fff;
 }
 
 /* Responsive */
@@ -261,4 +217,254 @@ footer {
 .cv-btn:hover {
     background: #232323;
     color: #fff !important;
+}
+
+
+
+
+/* ------------------------------------------------------ */
+
+/* --- Styles spécifiques à la page travaux.html --- */
+
+.travaux-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    background: none; /* pas de fond pour cette page */
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.filters {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.filter-btn {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 10px 7px 10px;
+    border-radius: 7px 7px 0 0;
+    border-bottom: 2px solid transparent;
+    transition: border 0.2s, background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+.filter-btn.active, .filter-btn:hover {
+    border-bottom: 2px solid #fff;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 36px;
+}
+.card {
+    background: #181818;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 4px 40px #0008;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-7px) scale(1.04);
+    box-shadow: 0 6px 48px #fff3, 0 2px 8px #000a;
+}
+.card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 24px 20px 20px 20px;
+    flex: 1 1 auto;
+}
+.card-title {
+    font-size: 1.4em;
+    margin-bottom: 7px;
+}
+.card-desc {
+    color: #bbb;
+    font-size: 1em;
+    margin-bottom: 18px;
+}
+.see-more {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    background: #32373c;
+    padding: 10px 22px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
+    display: inline-block;
+}
+.see-more:hover {
+    background: #505357;
+    transform: scale(1.07);
+    box-shadow: 0 2px 14px #fff3;
+}
+@media (max-width: 600px) {
+    .filters { flex-wrap: wrap; gap: 15px; }
+    .card img { height: 160px; }
+}
+
+
+
+
+/* --- Styles spécifiques à la page serpent-histoire.html --- */
+.serpent-h-timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto 60px auto;
+  min-height: 230px;
+  overflow: visible;
+}
+.serpent-h-timeline-path,
+.serpent-h-timeline-events {
+  width: 100%;
+  max-width: 800px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  height: 230px;
+}
+.serpent-h-event {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: #232323;
+  color: #fff;
+  padding: 16px 28px;
+  border-radius: 18px;
+  box-shadow: 0 2px 18px #0009;
+  min-width: 150px;
+  text-align: center;
+  pointer-events: auto;
+  opacity: 0;
+  animation: eventAppear 1.5s ease forwards;
+  transition: 
+    min-width 0.4s cubic-bezier(.68,-0.55,.27,1.55),
+    max-width 0.4s cubic-bezier(.68,-0.55,.27,1.55),
+    padding 0.4s cubic-bezier(.68,-0.55,.27,1.55),
+    box-shadow 0.3s, background 0.3s, color 0.3s;
+  cursor: pointer;
+  overflow: visible;
+}
+.serpent-h-event:nth-child(1) { animation-delay: 0.3s;}
+.serpent-h-event:nth-child(2) { animation-delay: 1s;}
+.serpent-h-event:nth-child(3) { animation-delay: 1.7s;}
+.serpent-h-event:nth-child(4) { animation-delay: 2.4s;}
+.serpent-h-event:nth-child(5) { animation-delay: 3.1s;}
+/* Ajoute plus si tu ajoutes plus d'étapes */
+
+.serpent-h-year {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 4px;
+  color: #ffd85b;
+}
+.serpent-h-label {
+  font-size: 1em;
+  color: #fff;
+}
+.serpent-h-detail {
+  color: #bbb;
+  font-size: 0.92em;
+}
+
+/* Effet d’allongement et d’affichage du détail au hover */
+.serpent-h-event:hover, .serpent-h-event:focus-within {
+  min-width: 320px;
+  max-width: 420px;
+  padding-left: 38px;
+  padding-right: 38px;
+  background: #232323;
+  box-shadow: 0 8px 30px #ffd85b88, 0 2px 18px #0009;
+  z-index: 10;
+}
+
+/* Détail caché/affiché */
+.serpent-h-more {
+  display: none;
+  margin-top: 14px;
+  color: #ffd85b;
+  font-size: 0.99em;
+  text-align: left;
+  animation: detailAppear 0.6s;
+}
+.serpent-h-event:hover .serpent-h-more,
+.serpent-h-event:focus-within .serpent-h-more {
+  display: block;
+}
+
+@keyframes detailAppear {
+  0% { opacity: 0; transform: translateY(12px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes eventAppear {
+  0% { opacity: 0; transform: translate(-50%, -40%) scale(0.8);}
+  80% { opacity: 1; transform: translate(-50%, -54%) scale(1.05);}
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1);}
+}
+
+.serpent-h-timeline-path #serpent-h-path {
+  animation: serpent-move 1.2s linear infinite;
+  stroke-dasharray: 32 16; /* total motif = 48 */
+}
+@keyframes serpent-move {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -48; }
+}
+
+@media (max-width: 1000px) {
+  .serpent-h-timeline-container,
+  .serpent-h-timeline-path,
+  .serpent-h-timeline-events {
+    width: 98vw;
+    max-width: 98vw;
+    min-width: 0;
+  }
+  .serpent-h-timeline-path,
+  .serpent-h-timeline-events {
+    height: 230px;
+  }
+}
+@media (max-width: 600px) {
+  .serpent-h-timeline-container { min-height: 160px; }
+  .serpent-h-event {
+    min-width: 90px;
+    padding: 8px 5px;
+    font-size: 0.86em;
+  }
+}
+
+.serpent-h-event.ensea-long {
+  min-width: 450px;
+  max-width: 650px;
+  /* facultatif, plus de padding si tu veux */
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* Garde l'effet d'élargissement au hover */
+.serpent-h-event.ensea-long:hover, .serpent-h-event.ensea-long:focus-within {
+  min-width: 500px;
+  max-width: 700px;
+}
+
+.serpent-h-event.gem-long {
+  min-width: 265px;
+  max-width: 350px;
+  /* facultatif, plus de padding si tu veux */
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* Garde l'effet d'élargissement au hover */
+.serpent-h-event.gem-long:hover, .serpent-h-event.gem-long:focus-within {
+  min-width: 400px;
+  max-width: 400px;
 }
