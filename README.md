@@ -12,6 +12,8 @@ Web Site Structure
 │   ├── blog.html             on going
 │   └── contact.html          AVAILABLE
 ├── travaux                                   # Folder containing all my works webpages presented in travaux.html
+│   ├──...
+│   └──...                                 
 ├── img                                       # Folder containing images for a webpage
 │   └──...                                    # Specfic Folder containing images for a specific webpage
 └── ressources                                # Folder containing resources for a webpage
