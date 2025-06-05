@@ -7,6 +7,7 @@ body {
     color: #fff;
 }
 
+
 /* Header et navigation */
 header {
     background-color: #181818;
@@ -205,8 +206,8 @@ footer {
 .cv-btn {
     display: inline-block;
     padding: 12px 28px;
-    background: #fff;
-    color: #181818 !important;
+    background: #181818;
+    color: #fff !important;
     font-weight: bold;
     border-radius: 8px;
     text-decoration: none;
@@ -214,9 +215,11 @@ footer {
     margin-top: 12px;
 }
 .cv-btn:hover {
-    background: #232323;
-    color: #fff !important;
+    background: #fff;
+    color: #232323 !important;
 }
+
+
 
 
 /* ------------------------------------------------------ */
@@ -253,8 +256,10 @@ footer {
 }
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 36px;
+    justify-items: center;
+    align-items: stretch;
 }
 .card {
     background: #181818;
@@ -464,4 +469,81 @@ footer {
 .serpent-h-event.gem-long:hover, .serpent-h-event.gem-long:focus-within {
   min-width: 400px;
   max-width: 400px;
+}
+
+/* Responsive pour la timeline */
+@media (max-width: 700px) {
+  .serpent-h-timeline-container {
+    min-height: 350px; /* Pour laisser la place aux events empilés */
+  }
+  .serpent-h-timeline-events {
+    position: static !important;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+  .serpent-h-event {
+    position: static !important;
+    transform: none !important;
+    min-width: 90vw !important;
+    max-width: 95vw !important;
+    padding: 14px 8px !important;
+    font-size: 0.95em;
+    margin-bottom: 16px;
+  }
+  .serpent-h-event.ensea-long,
+  .serpent-h-event.gem-long {
+    min-width: 90vw !important;
+    max-width: 95vw !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .serpent-h-timeline-path {
+    display: none !important; /* On cache le SVG pour la version mobile */
+  }
+}
+
+
+/* --- Styles spécifiques à la page publications.html --- */
+.publications-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.pub-item {
+    display: flex;
+    align-items: flex-start; /* Par défaut le bouton sera aligné en haut, on va corriger ça plus bas */
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+    min-height: 88px; /* Ajuste selon le texte de la plus petite ligne */
+}
+
+.pub-info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.see-more.small {
+    padding: 9px 22px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    align-self: center; /* le bouton est centré verticalement par rapport au texte */
+}
+
+@media (max-width: 700px) {
+    .pub-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        min-height: unset;
+    }
+    .see-more.small {
+        align-self: flex-start;
+    }
 }
