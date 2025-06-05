@@ -16,6 +16,6 @@ Web Site Structure
 │   └──...                                 
 ├── img                                       # Folder containing images for a webpage
 │   └──...                                    # Specfic Folder containing images for a specific webpage
-└── ressources                                # Folder containing resources for a webpage
+└── ressources                                # Folder containing resources for all webpages
 
 ```
