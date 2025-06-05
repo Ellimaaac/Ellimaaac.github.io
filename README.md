@@ -8,7 +8,7 @@ Web Site Structure
 ├── scripts.js                                # JavaScript file for interactive elements in the web interface                                         
 ├── nav                                       # Folder containing all other webpage
 │   ├── travaux.html          coming soon
-│   ├── publications.html     on going
+│   ├── publications.html     AVAILABLE
 │   ├── blog.html             on going
 │   └── contact.html          AVAILABLE
 ├── travaux                                   # Folder containing all my works webpages presented in travaux.html
