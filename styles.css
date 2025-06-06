@@ -7,6 +7,7 @@ body {
     color: #fff;
 }
 
+
 /* Header et navigation */
 header {
     background-color: #181818;
@@ -267,8 +268,9 @@ footer {
     box-shadow: 0 4px 40px #0008;
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s, box-shadow 0.3s;
+    transition: transform 0.2s, box-shadow 0.3s;  
 }
+
 .card:hover {
     transform: translateY(-7px) scale(1.04);
     box-shadow: 0 6px 48px #fff3, 0 2px 8px #000a;
@@ -545,4 +547,170 @@ footer {
     .see-more.small {
         align-self: flex-start;
     }
+}
+
+.strong {
+    font-weight: bold;
+    color: #ffd85b;
+}
+
+
+/* --- CARROUSEL BLOG --- */
+.image-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    margin: 24px auto 28px auto;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #181818;
+    box-shadow: 0 4px 40px #0008;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(.42,0,.58,1);
+    will-change: transform;
+}
+.carousel-img {
+    min-width: 100%;
+    height: 360px;
+    object-fit: contain;
+    background: #232323;
+    cursor: zoom-in;
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #232323bb;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s;
+}
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+.carousel-btn:hover { background: #fff; color: #232323; }
+.carousel-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 7px;
+    z-index: 2;
+    pointer-events: none;
+}
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff8;
+    border: 1.5px solid #fff;
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+    pointer-events: auto;
+}
+.carousel-dot.active {
+    background: #fff;
+    transform: scale(1.22);
+}
+@media (max-width: 800px) {
+    .carousel-img { height: 210px; }
+}
+@media (max-width: 500px) {
+    .carousel-img { height: 150px; }
+    .carousel-btn { width: 32px; height: 32px; font-size: 1.3em; }
+    .carousel-dot { width: 6px; height: 6px; }
+    .carousel-dots { bottom: 7px; }
+}
+
+/* --- LIGHTBOX --- */
+.carousel-lightbox {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(10,10,10,0.97);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+.carousel-lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.carousel-lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 20px;
+    box-shadow: 0 4px 60px #000b;
+    animation: popin 0.33s;
+    background: #181818;
+}
+@keyframes popin {
+    0% { transform: scale(0.92); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.carousel-lightbox-close {
+    position: fixed;
+    top: 26px;
+    right: 32px;
+    font-size: 3.2em;
+    color: #fff;
+    background: rgba(30,30,30,0.7);
+    border: none;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    z-index: 1010;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+.carousel-lightbox-close:hover {
+    background: #fff;
+    color: #232323;
+}
+/* Icone ouvrir image originale */
+.carousel-lightbox-link {
+    position: relative;
+    display: inline-block;
+    outline: none;
+}
+.carousel-lightbox-open {
+    position: absolute;
+    bottom: 18px;
+    right: 28px;
+    font-size: 2.1em;
+    color: #fff;
+    background: #232323cc;
+    padding: 6px 10px 5px 10px;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 14px #0005;
+    z-index: 1020;
+    opacity: 0.95;
+}
+.carousel-lightbox-link:hover .carousel-lightbox-open,
+.carousel-lightbox-open:hover {
+    background: #fff;
+    color: #232323;
+    opacity: 1;
+}
+@media (max-width:600px){
+    .carousel-lightbox-img { max-width: 98vw; max-height: 70vh; }
+    .carousel-lightbox-close { top: 12px; right: 10px; font-size: 2.1em; width: 38px; height: 38px;}
+    .carousel-lightbox-open { font-size: 1.3em; bottom: 7px; right: 9px; }
 }
