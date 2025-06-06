@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page en construction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body {
+            background: #181818;
+            color: #ffd85b;
+            margin: 0;
+            font-family: 'Oswald', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .construction-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            text-align: center;
+        }
+        .construction-icon {
+            font-size: 6em;
+            margin-bottom: 22px;
+            color: #ffd85b;
+            animation: spin 2.2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(-6deg);}
+            90% { transform: rotate(6deg);}
+            100% { transform: rotate(-6deg);}
+        }
+        .construction-title {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .construction-desc {
+            color: #fff6;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        .back-home {
+            color: #181818;
+            background: #ffd85b;
+            padding: 15px 38px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .back-home:hover {
+            background: #fff;
+            color: #181818;
+        }
+    </style>
+</head>
+<body>
+    <div class="construction-container">
+        <div class="construction-icon">🚧</div>
+        <div class="construction-title">Page en cours de construction</div>
+        <div class="construction-desc">
+            Cette page n'est pas encore disponible.<br>
+            Merci de revenir plus tard !
+        </div>
+        <a href="../index.html" class="back-home">Retour à l'accueil</a>
+    </div>
+</body>
+</html>
