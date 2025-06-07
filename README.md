@@ -20,7 +20,7 @@ Web Site Structure
 │   └──...                                    # Specfic Folder containing images for a specific webpage
 ├──  ressources
 │   └──...                              
-└── eng                        On going       # Folder containing all the webpages tranlated in eng
-    ├── index.h;tl             Coming soon
+└── eng                        On going       # Folder containing all the webpages translated in eng
+    ├── index.html             Coming soon
     └──...                         
 ```
