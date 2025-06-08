@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Camille Lanfredi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <h1>Camille Lanfredi</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">À Propos</a></li>
+                <li><a href="../nav/travaux.html">Mes Travaux</a></li>
+                <li><a href="../nav/publications.html">Mes Publications</a></li>
+                <li><a href="../nav/blog.html">Blog</a></li>
+                <li><a href="../nav/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="tixi-main">
+        <div class="tixi-h1">🏁 Projet Robot Suiveur de Ligne – TIXI</div>
+            <div style="display: flex; flex-direction: row; justify-content: center; gap: 16px; margin-bottom: 24px;">
+                <a href="../ressources/Le robot suiveur de ligne.pdf" target="_blank" class="see-more small">Poster Scientifique</a>
+                <a href="../ressources/Poster_Projet.pdf" target="_blank" class="see-more small">Poster Grand Publique</a>
+            </div>
+            <img src="../img/tixi/tixi2.png" alt="Logo TIXI" class="tixi-logo" width="880" height="320">
+        <div class="tixi-section">
+            <div class="tixi-badge">Présentation du Projet</div>
+            <p>
+                Le projet <b>TIXI</b> consiste à concevoir et programmer un robot suiveur de ligne autonome capable de participer à une course technique.<br>
+                L’objectif : suivre une ligne noire sur fond blanc, tout en gérant les éléments spécifiques de la piste (raccourcis, priorités, figures, détection de fin).
+            </p>
+            <p>
+                <b>Réalisé par :</b> Hugo Daunois &amp; Camille Lanfredi<br>
+                <span style="color:#bbb;">DUT GEII 2ème année, IUT d’Aix-Marseille (Salon-de-Provence)</span>
+            </p>
+        </div>
+
+        <div class="tixi-section">
+            <span class="tixi-emoji">⚙️</span><b>Objectifs</b>
+            <ul class="tixi-list">
+                <li>Suivre une ligne noire sur fond blanc</li>
+                <li>Détecter et prendre un raccourci à gauche</li>
+                <li>S'arrêter aux priorités à droite (détection de véhicule)</li>
+                <li>Réaliser une figure (rotation sur lui-même)</li>
+                <li>S’arrêter après avoir fait tomber une barre en bois</li>
+            </ul>
+        </div>
+
+        <div class="tixi-section">
+            <span class="tixi-emoji">🔧</span><b>Technologies &amp; Composants</b>
+            <ul class="tixi-list">
+                <li>Carte Arduino Mega 2560</li>
+                <li>Capteurs infrarouges QTR-8RC pour le suivi de ligne</li>
+                <li>Capteur à ultrasons pour la détection de véhicule</li>
+                <li>Encodeurs pour le contrôle de vitesse et les figures</li>
+                <li>Carte moteur à pont en H pour la commande des moteurs</li>
+                <li>LED RGB pour l’indication de l’état du robot</li>
+                <li>Modélisation 3D sous SolidWorks et impression 3D</li>
+            </ul>
+        </div>
+
+        <div class="tixi-section">
+            <span class="tixi-emoji">💡</span><b>Fonctions principales</b>
+            <table class="tixi-table">
+                <tr><th>Fonction</th><th>Description</th></tr>
+                <tr><td>Analyser la piste</td><td>Suivre la ligne via des capteurs infrarouges</td></tr>
+                <tr><td>Gérer les moteurs</td><td>Contrôler la vitesse et direction (PID)</td></tr>
+                <tr><td>Détecter raccourcis</td><td>Identifier les marqueurs et tourner à gauche</td></tr>
+                <tr><td>Gérer priorités</td><td>S’arrêter en présence d’un robot adverse</td></tr>
+                <tr><td>Réaliser une figure</td><td>Rotation complète en réponse à un indicateur</td></tr>
+                <tr><td>Fin de parcours</td><td>S’arrêter après avoir fait tomber la barre</td></tr>
+            </table>
+        </div>
+
+        <div class="tixi-section">
+            <span class="tixi-emoji">🛠️</span><b>Réalisations Techniques</b>
+            <ul class="tixi-list">
+                <li>Développement d’un code Arduino complet, optimisé avec interruptions et régulateurs PID</li>
+                <li>Fabrication d’une carte d’interface personnalisée entre l’Arduino et le module QTR</li>
+                <li>Conception et impression d’un châssis aérodynamique</li>
+                <li>Création d’un système de chronométrage autonome via capteurs infrarouges</li>
+            </ul>
+        </div>
+
+        <div class="tixi-section">
+            <span class="tixi-badge">📸 Galerie</span>
+            <p>
+                Voici quelques videos et photos de la structure de Tixi.
+            </p>
+            <div class="image-carousel tixi-gallery-carousel">
+                <div class="carousel-track">
+                    <video src="../img/tixi/assemblement.mp4" class="carousel-img" controls></video>
+                    <img src="../img/tixi/body.jpg" alt="chassis" class="carousel-img">
+                    <img src="../img/tixi/front.jpg" alt="capteur IR" class="carousel-img">
+                    <img src="../img/tixi/skin.webp" alt="tixi ouvert" class="carousel-img">
+                    <img src="../img/tixi/ouvert.jpg" alt="Robot TIXI sur piste" class="carousel-img">
+                    <img src="../img/tixi/20220216_104407.jpg" alt="tixi ouvert" class="carousel-img">
+                </div>
+                <button class="carousel-btn prev">&#8249;</button>
+                <button class="carousel-btn next">&#8250;</button>
+                <div class="carousel-dots"></div>
+            </div>
+        
+
+            <p>
+                Voici quelques vidéos de Tixi en action
+            </p>
+            <div class="image-carousel tixi-gallery-carousel">
+                <div class="carousel-track">
+                    <video src="../img/tixi/testPiste.mp4" class="carousel-img" controls></video>
+                    <video src="../img/tixi/testPiste2.mp4" class="carousel-img" controls></video>
+                    <video src="../img/tixi/arret.mp4" class="carousel-img" controls></video>
+                </div>
+                <button class="carousel-btn prev">&#8249;</button>
+                <button class="carousel-btn next">&#8250;</button>
+                <div class="carousel-dots"></div>
+            </div>
+
+            <p>
+                De plus, nous avons créé la piste de course, ainsi que son système de chronométrage autonome.
+            </p>
+            <div class="image-carousel tixi-gallery-carousel">
+                <div class="carousel-track">
+                    <video src="../img/tixi/piste.mp4" class="carousel-img" controls></video>
+                    <video src="../img/tixi/RaceSystem.mp4" class="carousel-img" controls></video>
+                </div>
+                <button class="carousel-btn prev">&#8249;</button>
+                <button class="carousel-btn next">&#8250;</button>
+                <div class="carousel-dots"></div>
+
+        </div>
+
+
+        <div class="tixi-section">
+            <span class="tixi-badge">📈 Résultats & Enseignements</span>
+            <ul class="tixi-list">
+                <li><span class="tixi-checked">✅</span> Suivre la ligne avec stabilité</li>
+                <li><span class="tixi-checked">✅</span> Prendre les raccourcis</li>
+                <li><span class="tixi-checked">✅</span> Gérer les priorités et obstacles</li>
+                <li><span class="tixi-checked">✅</span> Réaliser la figure</li>
+                <li><span class="tixi-checked">✅</span> S’arrêter à la fin sans erreurs</li>
+            </ul>
+            <p>
+                Ce projet nous a permis de renforcer nos compétences en électronique, programmation embarquée, conception mécanique et gestion de projet.
+            </p>
+        </div>
+
+        <div class="tixi-section">
+            <span class="tixi-badge">🏁 Vidéo de la course</span>
+            <p>
+                Découvrez la vidéo de la course finale de TIXI :
+            </p>
+            <div class="tixi-video-container" style="text-align:center;">
+                <video src="../img/tixi/Race.mp4" controls width="720"  style="max-width:100%;border-radius:12px;">
+                    Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+                </video>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts.js"></script>
+</body>
+</html>
