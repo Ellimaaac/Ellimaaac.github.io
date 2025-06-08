@@ -82,7 +82,7 @@ if (document.getElementById("portfolioGrid")) {
         {
             title: "TIXI : Robot suiveur de ligne",
             description: "Projet de fin d'études DUT GEII.",
-            image: "../img/tixi/tixi2.png",
+            image: "../img/tixi/TIXI2.png",
             category: "Electronique",
             link: "../nav/travaux/tixi.html"
         },
