@@ -714,3 +714,95 @@ footer {
     .carousel-lightbox-close { top: 12px; right: 10px; font-size: 2.1em; width: 38px; height: 38px;}
     .carousel-lightbox-open { font-size: 1.3em; bottom: 7px; right: 9px; }
 }
+
+
+/* --- Styles spécifiques à la page tixi.html --- */
+
+.tixi-main {
+    max-width: 880px;
+    margin: 48px auto 32px auto;
+    background: #181818;
+    border-radius: 26px;
+    box-shadow: 0 4px 32px #000a;
+    padding: 42px 28px 32px 28px;
+}
+        .tixi-h1 {
+            color: #ffd85b;
+            font-family: 'Oswald', Arial, sans-serif;
+            font-size: 2.3em;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+        .tixi-section {
+            margin-bottom: 32px;
+        }
+        .tixi-section h2 {
+            color: #ffd85b;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        .tixi-list {
+            margin-top: 0; margin-bottom: 14px; padding-left: 20px;
+        }
+        .tixi-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #232323;
+            margin-bottom: 22px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .tixi-table th, .tixi-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #222;
+        }
+        .tixi-table th {
+            background: #181818;
+            color: #ffd85b;
+            text-align: left;
+        }
+        .tixi-table tr:last-child td {
+            border-bottom: none;
+        }
+        .tixi-badge {
+            font-weight: bold;
+            color: #ffd85b;
+        }
+        .tixi-galerie {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .tixi-galerie img {
+            width: 220px;
+            max-width: 95vw;
+            border-radius: 13px;
+            background: #232323;
+            box-shadow: 0 2px 18px #0007;
+        }
+        .tixi-emoji {
+            font-size: 1.45em;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .tixi-checked {
+            color: #98e298;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        @media (max-width: 600px) {
+            .tixi-main { padding: 16px 3vw 12px 3vw; }
+            .tixi-h1 { font-size: 1.3em;}
+            .tixi-galerie { flex-direction: column; align-items: center;}
+            .tixi-galerie img { width: 97vw;}
+        }
+
+#language-switcher select {
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+#language-switcher select:hover {
+    transform: scale(1.05);
+}
