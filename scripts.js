@@ -84,7 +84,7 @@ if (document.getElementById("portfolioGrid")) {
             description: "Projet de fin d'études DUT GEII.",
             image: "../img/tixi/TIXI2.png",
             category: "Electronique",
-            link: "../nav/travaux/tixi.html"
+            link: "../travaux/tixi.html"
         },
         {
             title: "Automatic Icon Converter",
