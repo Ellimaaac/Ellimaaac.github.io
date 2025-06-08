@@ -1,10 +1,16 @@
 /* Style général */
 body {
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #000;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -60,6 +66,11 @@ main {
     padding: 0;
 }
 
+main,
+.travaux-container {
+    flex: 1 0 auto;
+}
+
 .container {
     max-width: 800px;
     margin: 50px auto 0 auto;
@@ -102,6 +113,7 @@ footer {
     position: static;
     width: 100%;
     bottom: 0;
+    flex-shrink: 0;
 }
 
 /* Responsive */
@@ -283,6 +295,8 @@ footer {
 .card-content {
     padding: 24px 20px 20px 20px;
     flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
 }
 .card-title {
     font-size: 1.4em;
@@ -292,6 +306,7 @@ footer {
     color: #bbb;
     font-size: 1em;
     margin-bottom: 18px;
+    flex-grow: 1; /* pousse le bouton vers le bas */
 }
 .see-more {
     color: #fff;
@@ -302,6 +317,7 @@ footer {
     border-radius: 8px;
     transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
     display: inline-block;
+    align-self: flex-start;
 }
 .see-more:hover {
     background: #505357;
@@ -806,3 +822,4 @@ footer {
 #language-switcher select:hover {
     transform: scale(1.05);
 }
+
