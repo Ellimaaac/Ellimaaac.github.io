@@ -3,115 +3,102 @@ if (document.getElementById("portfolioGrid")) {
     // ---- DATA ----
     const projects = [
         {
+            title: "Processeurs de SmartDevices Dataset",
+            description: "Smartphones, Smartwatches, Tablets. Data science (MachineLearning/DeepLearning).",
+            image: "../img/processors/processor.png",
+            category: "Data",
+            link: "https://www.kaggle.com/datasets/ellimaaac/processors-of-smart-devices"
+        },
+        {
             title: "Camille, assistante virtuelle",
             description: "Agent AI (Chabot) pour guider les citoyens sur la gestion des dechets de la Metropole de Grenoble.",
-            image: "img/camille AI/camille.png",
+            image: "../img/camille AI/camilleIA.png",
             category: "AI",
-            link: "../travaux/CamilleAI.html"
+            link: "../nav/construction.html"
         },
         {
             title:"Spotify Analysis",
             description: "Analyse des données de Spotify. Data science (MachineLearning/DeepLearning).",
             image: "../img/spotify/spotify.png",
             category: "Data",
-            link: "../travaux/spotify.html"
+            link: "../nav/construction.html"
         },          
         {
-            title: "Osu! Players Analysis & Dataset",
-            description: "Conservation et Analyse des joueurs d'Osu!. Data science (MachineLearning/DeepLearning).",
+            title: "Osu! Players Dataset",
+            description: "Conservation  des joueurs d'Osu!. Data science (MachineLearning/DeepLearning).",
             image: "../img/Osu!beatmaps/osu-Stellar-Series-BTMC-desk.jpg",
             category: "Data",
-            link: "../travaux/Osu!player.html"
+            link: "https://www.kaggle.com/datasets/ellimaaac/osustandard-players-from-2007-to-today"
         },
         {
-            title: "Osu! Beatmaps Analysis & Dataset",
-            description: "Conservation et Analyse des beatmaps d'Osu!. Data science (MachineLearning/DeepLearning).",
+            title: "Osu! Beatmaps  Dataset",
+            description: "Conservation des beatmaps d'Osu!. Data science (MachineLearning/DeepLearning).",
             image: "../img/Osu!beatmaps/osu-Stellar-Series-BTMC-desk.jpg",
             category: "Data",
-            link: "../travaux/Osu!beatmaps.html"
+            link: "https://www.kaggle.com/datasets/ellimaaac/osu-dataset-of-all-beatmaps-from-2007-to-today"
         },
         {
-            tile: "Osu! Rankings 2024",
-            description: "Datasets des classements mondiaux d'Osu! de 2024.",
-            image: "../img/Osu!beatmaps/osu-Stellar-Series-BTMC-desk.jpg",
-            category: "Data",
-            link: "../travaux/Osu!rankings2024.html"
-        },
-        {
-            title: "Osu! Classement Mondial Dataset de 2017 a 2025",
-            description: "Datasets.",
-            image: "../img/Osu!beatmaps/osu-Stellar-Series-BTMC-desk.jpg",
-            category: "Data",
-            link: "#"
-        },
-        {
-            title: "Amazon Product Analysis & Dataset",
+            title: "Amazon Product Datasets",
             description: "Casques et Ecouteurs Audio. Analyse Statistique et NLP.",
             image: "../img/amazon/amazon.png",
             category: "Data",
-            link: "#"
+            link: "https://www.kaggle.com/datasets/ellimaaac/amazon-france-headphones-and-earphones-bestsellers"
         },
         {
             title: "Walmart Product Dataset",
             description: "Casques et Ecouteurs Audio. Dataset.",
             image: "../img/walmart/walmart.png",
             category: "Data",
-            link: ""
-        },
-        {
-            title : "Auchan Product Dataset",
-            description: "Casques et Ecouteurs Audio. Dataset.",
-            image: "../img/auchan/auchan.png",
-            category: "Data",
-            link: ""
+            link: "https://www.kaggle.com/datasets/ellimaaac/walmart-headphones-and-earphones-bestsellers"
         },
         {
             title: "Pédale de Guitare Multi Effets",
             description: "Projet de 2eme année d'ecole d'ingénieur. Conception et réalisation d'une pédale de guitare multi-effets.",
             image: "../img/pedaleDeGuitare/pedaleDeGuitare.png",
             category: "Electronique",
-            link: ".html"
+            link: "../nav/construction.html"
         },
         {
             title:"Etude Synthétiseur FM",
             description: "Projet de 2eme année d'ecole d'ingénieur, option Electronique et Signal pour la Musique.",
-            image: "../img/synthesizer/synthesizer.png",
+            image: "../img/SynthéFM/FMsynth.jpg",
             category: "Electronique",
-            link: "../travaux/synthesizer.html"
+            link: "../nav/construction.html"
         },
         {
             title: "Logiciel Paint + Jeux",
             description: "Projet de 2eme année d'ecole d'ingénieur. Logiciel de dessin Paint + Ou est Charlie et 7 differences, développé en Java.",
-            image: "../img/paint/paint.png",
+            image: "../img/paintJava/paintJava.png",
             category: "Informatique",
-            link: "../travaux/paint.html"
+            link: "../nav/construction.html"
         },
         {
             title: "Clavier Mécanique",
             description: "Conception d'un clavier mécanique personnalisé avec souris intégrée.",
-            image: "../img/clavier/clavierMecanique.png",
+            image: "../img/clavier/CM.png",
             category: "Electronique",
-            link: ".html"
+            link: "../nav/construction.html"
         },            
         {
             title: "TIXI : Robot suiveur de ligne",
             description: "Projet de fin d'études DUT GEII.",
             image: "../img/tixi/tixi2.png",
             category: "Electronique",
+            link: "../travaux/tixi.html"
         },
         {
             title: "Automatic Icon Converter",
             description: "Convertie la 1ere image en icône du dossier.",
             image: "../img/autoIconConverter/Auto_Icon_Converter.png",
             category: "Informatique",
-            link: "../travaux/autoIconConverter.html"
+            link: "../nav/construction.html"
         },
         {
             title: ".Webp to .PNG Converter",
             description: "Convertisseur automatique d’images .webp en .png pour toutes les images contenues dans un dossier. Et cela pour tous les dossiers contenus dans un dossier/chemin.",
             image: "../img/ImageConverter/ImageConverter.png",
             category: "Informatique",
-            link: "../travaux/webpToPngConverter.html"
+            link: "../nav/construction.html"
         },
 
     ];
@@ -153,16 +140,17 @@ if (document.getElementById("portfolioGrid")) {
     renderGrid("Toutes les réalisations");
 }
 
-// --- Carrousel Reddit/Instagram pour le blog ---
+// --- Carrousel Reddit/Instagram pour le blog/galerie ---
+// (reprend le code déjà donné, sinon tu peux fusionner tes deux carrousels)
 document.querySelectorAll('.image-carousel').forEach(function(carousel) {
     const track = carousel.querySelector('.carousel-track');
-    const images = carousel.querySelectorAll('.carousel-img');
+    const medias = carousel.querySelectorAll('.carousel-img');
     const prevBtn = carousel.querySelector('.carousel-btn.prev');
     const nextBtn = carousel.querySelector('.carousel-btn.next');
     const dotsContainer = carousel.querySelector('.carousel-dots');
     let idx = 0;
     // Génère les dots
-    images.forEach((img, i) => {
+    medias.forEach((img, i) => {
         const dot = document.createElement('span');
         dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
         dot.onclick = () => goTo(i);
@@ -175,11 +163,11 @@ document.querySelectorAll('.image-carousel').forEach(function(carousel) {
         dots.forEach(dot => dot.classList.remove('active'));
         dots[n].classList.add('active');
     }
-    prevBtn.onclick = () => goTo((idx - 1 + images.length) % images.length);
-    nextBtn.onclick = () => goTo((idx + 1) % images.length);
+    prevBtn.onclick = () => goTo((idx - 1 + medias.length) % medias.length);
+    nextBtn.onclick = () => goTo((idx + 1) % medias.length);
 });
 
-// --- Lightbox pour carrousel ---
+// --- Lightbox pour carrousel (images seulement, pas vidéos) ---
 if (!document.getElementById('carousel-lightbox')) {
     const lightbox = document.createElement('div');
     lightbox.className = 'carousel-lightbox';
@@ -200,16 +188,33 @@ if (!document.getElementById('carousel-lightbox')) {
     }
 }
 
-// --- Clic sur une image du carrousel = ouvrir lightbox ---
-document.querySelectorAll('.carousel-img').forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.onclick = function() {
-        const lightbox = document.getElementById('carousel-lightbox');
-        const bigImg = lightbox.querySelector('.carousel-lightbox-img');
-        const link = lightbox.querySelector('.carousel-lightbox-link');
-        bigImg.src = this.src;
-        bigImg.alt = this.alt;
-        link.href = this.src; // bouton/lien "ouvrir l’image originale"
-        lightbox.classList.add('active');
+// --- Clic sur une image = ouvrir lightbox / Clic sur une vidéo = rien (lecture native) ---
+document.querySelectorAll('.carousel-img').forEach(media => {
+    if (media.tagName.toLowerCase() === "img") {
+        media.style.cursor = 'zoom-in';
+        media.onclick = function() {
+            const lightbox = document.getElementById('carousel-lightbox');
+            const bigImg = lightbox.querySelector('.carousel-lightbox-img');
+            const link = lightbox.querySelector('.carousel-lightbox-link');
+            bigImg.src = this.src;
+            bigImg.alt = this.alt;
+            link.href = this.src;
+            lightbox.classList.add('active');
+        }
+    } else if (media.tagName.toLowerCase() === "video") {
+        // Optionnel : mini-style
+        media.style.cursor = 'pointer';
+        // Pas de lightbox : le lecteur vidéo natif suffit.
     }
 });
+
+// --- Language switcher ---
+function switchLanguage(lang) {
+    if (lang === 'en') {
+        window.location.href = 'eng/index.html'; // correspond à ton dossier
+    } else if (lang === 'fr') {
+        window.location.href = '../index.html';  // car on est dans /eng/
+    }
+}
+
+
