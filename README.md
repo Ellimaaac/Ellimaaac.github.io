@@ -21,7 +21,7 @@ Web Site Structure
 ├──  ressources
 │   └──...                              
 └── eng                        On going       # Folder containing all the webpages translated in eng
-    ├── index.html             Coming soon
-    └──...
+│    ├── index.html             Coming soon
+│    └──...
 └── Other Languages                        
 ```
