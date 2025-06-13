@@ -287,8 +287,3 @@ if (document.body) {
     }
   };
 }
-
-
-
-
-
