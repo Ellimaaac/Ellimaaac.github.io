@@ -823,3 +823,6 @@ footer {
     transform: scale(1.05);
 }
 
+canvas {
+    pointer-events: none; /* Pour ne jamais bloquer les clics */
+}
