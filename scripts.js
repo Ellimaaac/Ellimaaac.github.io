@@ -217,4 +217,78 @@ function switchLanguage(lang) {
     }
 }
 
+// === FLOW FIELD FULLSCREEN BACKGROUND ANIMATION (TURQUOISE) ===
+if (document.body) {
+  // --- Paramètres du preset GenerativeMap ---
+  let nbPoints = 3000;
+  let speed = 0.2;
+  let size = 1;
+  let positionScale = 200;
+  let rotationScale = 200;
+  let opacity = 20;
+  let fadeSpeed = 0; // pas de trail qui s'efface
+  let colorMap = [0, 255, 200, opacity]; // TURQUOISE. Pour couleur d'origine : [115, 64, 50, opacity]
+  let points = [];
+  let mainWidth, mainHeight;
+
+  window.setup = function() {
+    mainWidth = window.innerWidth;
+    mainHeight = window.innerHeight;
+    createCanvas(mainWidth, mainHeight);
+    let c = document.querySelector('canvas');
+    c.style.position = "fixed";
+    c.style.top = "0";
+    c.style.left = "0";
+    c.style.width = "100vw";
+    c.style.height = "100vh";
+    c.style.zIndex = "-1";
+    c.style.pointerEvents = "none";
+    background(0);
+    stroke(...colorMap);
+    strokeWeight(size);
+
+    // Création des points
+    points = [];
+    for (let i = 0; i < nbPoints; i++) {
+      points.push(createVector(random(mainWidth), random(mainHeight)));
+    }
+  };
+
+  window.draw = function() {
+    if (fadeSpeed > 0) {
+      background(0, fadeSpeed);
+    }
+    stroke(...colorMap);
+    strokeWeight(size);
+
+    for (let vector of points) {
+      let direction = 2 * rotationScale * Math.PI * noise(vector.x / positionScale, vector.y / positionScale);
+      vector.x += Math.cos(direction) * speed;
+      vector.y += Math.sin(direction) * speed;
+
+      // randomTeleport (comme dans ton générateur)
+      if (vector.x < 0 || vector.x > mainWidth || vector.y < 0 || vector.y > mainHeight) {
+        vector.x = random(mainWidth);
+        vector.y = random(mainHeight);
+      }
+      point(vector.x, vector.y);
+    }
+  };
+
+  window.windowResized = function() {
+    mainWidth = window.innerWidth;
+    mainHeight = window.innerHeight;
+    resizeCanvas(mainWidth, mainHeight);
+    background(0);
+    // Replace tous les points pour couvrir le nouveau canvas
+    for (let vector of points) {
+      vector.x = random(mainWidth);
+      vector.y = random(mainHeight);
+    }
+  };
+}
+
+
+
+
 
