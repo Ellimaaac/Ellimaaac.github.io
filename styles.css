@@ -460,8 +460,8 @@ footer {
 }
 
 .serpent-h-event.ensea-long {
-  min-width: 450px;
-  max-width: 650px;
+  min-width: 400px;
+  max-width: 550px;
   /* facultatif, plus de padding si tu veux */
   padding-left: 40px;
   padding-right: 40px;
@@ -470,7 +470,7 @@ footer {
 /* Garde l'effet d'élargissement au hover */
 .serpent-h-event.ensea-long:hover, .serpent-h-event.ensea-long:focus-within {
   min-width: 500px;
-  max-width: 700px;
+  max-width: 550px;
 }
 
 .serpent-h-event.gem-long {
@@ -848,4 +848,93 @@ canvas {
 @media (max-width: 600px) {
     .grid { grid-template-columns: 1fr;}
 }
+
+
+
+
+
+.timeline-road-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto 80px auto;
+  height: 250px;
+}
+
+.timeline-road-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.timeline-road-path {
+  fill: none;
+  stroke: white;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 40 20;
+  animation: dash-move 2s linear infinite;
+}
+
+@keyframes dash-move {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -60; }
+}
+
+.road-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.road-marker::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background: red;
+  border: 4px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #181818;
+}
+
+
+.roadmap {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 300px;
+  margin: 50px auto;
+}
+
+.roadmap-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pin {
+  width: 24px;
+  height: 24px;
+  background: #ffd85b;
+  border: 6px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #111;
+  margin: 0 auto 8px auto;
+}
+
+.strong {
+  font-weight: bold;
+  color: #ffd85b;
+  margin-bottom: 5px;
+}
+
 
