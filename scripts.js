@@ -286,3 +286,66 @@ if (document.body) {
     }
   };
 }
+
+
+if (document.getElementById('blog-filters')) {
+    // 1. Récupère tous les articles du blog
+    const posts = Array.from(document.querySelectorAll('.blog-post')).map(post => {
+        const title = post.querySelector('h3').textContent;
+        const theme = (title.match(/\[(.*?)\]/) || [])[1] || 'Autre';
+        const date = post.querySelector('.blog-date') ? post.querySelector('.blog-date').textContent.trim() : '';
+        return { post, theme, date };
+    });
+
+    // 2. Extraire toutes les années
+    const years = Array.from(new Set(posts.map(p => p.date.slice(-4)))).sort((a, b) => b - a);
+
+    // 3. Extraire tous les thèmes
+    const themes = Array.from(new Set(posts.map(p => p.theme)));
+
+    // 4. Affiche les boutons de thème
+    const themeFilters = document.getElementById('theme-filters');
+    // Création des boutons de thème
+    themeFilters.innerHTML = '';
+    ['Tous', ...themes].forEach(th => {
+        const btn = document.createElement('button');
+        btn.textContent = th;
+        btn.className = 'filter-btn';
+        if (th === 'Tous') btn.classList.add('active');
+        btn.onclick = () => {
+            document.querySelectorAll('#theme-filters .filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterBlog();
+        };
+        themeFilters.appendChild(btn);
+    });
+
+
+    // 5. Menu déroulant année
+    const dateFilter = document.getElementById('date-filter');
+    years.forEach(year => {
+        const opt = document.createElement('option');
+        opt.value = year;
+        opt.textContent = year;
+        dateFilter.appendChild(opt);
+    });
+    dateFilter.onchange = filterBlog;
+
+    // 6. Fonction de filtrage (homogène, containers masqués si vides)
+    function filterBlog() {
+        const activeTheme = document.querySelector('#theme-filters .filter-btn.active').textContent;
+        const activeYear = dateFilter.value;
+        posts.forEach(({post, theme, date}) => {
+            let ok = true;
+            if (activeTheme !== 'Tous' && theme !== activeTheme) ok = false;
+            if (activeYear !== 'all' && date.slice(-4) !== activeYear) ok = false;
+            post.style.display = ok ? '' : 'none';
+        });
+        // Masque le container si plus aucun blog-post visible dedans
+        document.querySelectorAll('.container').forEach(container => {
+            const hasVisible = Array.from(container.querySelectorAll('.blog-post')).some(p => p.style.display !== 'none');
+            container.style.display = hasVisible ? '' : 'none';
+        });
+    }
+}
+
