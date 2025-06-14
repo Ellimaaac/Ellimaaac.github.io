@@ -13,7 +13,6 @@ html, body {
     padding: 0;
 }
 
-
 /* Header et navigation */
 header {
     background-color: #181818;
@@ -731,9 +730,7 @@ footer {
     .carousel-lightbox-open { font-size: 1.3em; bottom: 7px; right: 9px; }
 }
 
-
 /* --- Styles spécifiques à la page tixi.html --- */
-
 .tixi-main {
     max-width: 880px;
     margin: 48px auto 32px auto;
