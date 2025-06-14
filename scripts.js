@@ -102,7 +102,6 @@ if (document.getElementById("portfolioGrid")) {
         },
 
     ];
-
     const categories = ["Toutes les réalisations", ...Array.from(new Set(projects.map(p => p.category)))];
 
     // ---- FILTERS RENDER ----
