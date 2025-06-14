@@ -226,7 +226,7 @@ if (document.body) {
   let rotationScale = 200;
   let opacity = 20;
   let fadeSpeed = 0; // pas de trail qui s'efface
-  let colorMap = [0, 255, 200, opacity]; // TURQUOISE. Pour couleur d'origine : [115, 64, 50, opacity]
+  let colorMap = [255, 216, 91, opacity]; // Meme couleur que mon nom 
   let points = [];
   let mainWidth, mainHeight;
 
