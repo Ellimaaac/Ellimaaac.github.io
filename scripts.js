@@ -307,11 +307,11 @@ if (document.getElementById('blog-filters')) {
     const themeFilters = document.getElementById('theme-filters');
     // Création des boutons de thème
     themeFilters.innerHTML = '';
-    ['Tous', ...themes].forEach(th => {
+    ['Tous les articles', ...themes].forEach(th => {
         const btn = document.createElement('button');
         btn.textContent = th;
         btn.className = 'filter-btn';
-        if (th === 'Tous') btn.classList.add('active');
+        if (th === 'Tous les articles') btn.classList.add('active');
         btn.onclick = () => {
             document.querySelectorAll('#theme-filters .filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -337,7 +337,7 @@ if (document.getElementById('blog-filters')) {
         const activeYear = dateFilter.value;
         posts.forEach(({post, theme, date}) => {
             let ok = true;
-            if (activeTheme !== 'Tous' && theme !== activeTheme) ok = false;
+            if (activeTheme !== 'Tous les articles' && theme !== activeTheme) ok = false;
             if (activeYear !== 'all' && date.slice(-4) !== activeYear) ok = false;
             post.style.display = ok ? '' : 'none';
         });
