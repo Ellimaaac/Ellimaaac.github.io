@@ -15,7 +15,7 @@ Web Site Structure
 │   ├──tixi.html              AVAILABLE
 │   └──...                    On going        # Other pages
 ├── blogs
-│   └──...                                 
+│   └──...                                    # Sort by date                                  
 ├── img                                       # Folder containing images for a webpage
 │   └──...                                    # Specfic Folder containing images for a specific webpage
 ├──  ressources
