@@ -13,7 +13,7 @@ Web Site Structure
 │   └── contact.html          AVAILABLE
 ├── travaux                                   # Folder containing all my works webpages presented in travaux.html
 │   ├──tixi.html              AVAILABLE
-│   └──...                    On going        # Other pages
+│   └──...                    On going        # Other work pages
 ├── blogs
 │   └──...                                    # Sort by date                                  
 ├── img                                       # Folder containing images for a webpage
