@@ -3,6 +3,20 @@ if (document.getElementById("portfolioGrid")) {
     // ---- DATA ----
     const projects = [
         {
+            title: "Opérateurs Mobile Mondiaux Dataset",
+            description: "Recensement des opérateurs mobiles dans le monde entier.",
+            image: "../img/Data/mo.png",
+            category: "Data",
+            link: "https://www.kaggle.com/datasets/ellimaaac/worldwide-mobile-network-operators-and-technologies"
+        },
+        {
+            title: "Souris d'ordinateur 'Gaming' Dataset",
+            description: "Specs des souris d'ordinateur 'Gaming'.",
+            image: "../img/Data/gm.jpg",
+            category: "Data",
+            link: "https://www.kaggle.com/datasets/ellimaaac/gaming-mouse-specs"
+        },
+        {
             title: "Processeurs de SmartDevices Dataset",
             description: "Smartphones, Smartwatches, Tablets. Data science (MachineLearning/DeepLearning).",
             image: "../img/processors/processor.png",
