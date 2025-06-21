@@ -14,7 +14,7 @@ Web Site Structure
 ├── travaux                                   # Folder containing all my works webpages presented in travaux.html
 │   ├──tixi.html              AVAILABLE
 │   └──...                    On going        # Other work pages
-├── blogs
+├── blogs                     AVAILABLE
 │   └──...                                    # Sort by date                                  
 ├── img                                       # Folder containing images for a webpage
 │   └──...                                    # Specfic Folder containing images for a specific webpage
