@@ -91,6 +91,7 @@
     }
 
   </style>
+    <link rel="icon" type="image/png" href="img/logo.png">
 </head>
 <body>
 
@@ -110,70 +111,8 @@
   <div class="container">
 
     <section style="margin-bottom:2rem;">
-  <h2 style="font-size:1.4rem;font-weight:600;">Website stats</h2>
+  <h1 style="font-size:2.4rem;font-weight:600;text-align:center;">Website stats</h1>
 
-  <div id="stats-card" style="
-      margin-top:0.75rem;
-      padding:1rem 1.4rem;
-      border-radius:12px;
-      background:#f8fafc;
-      border:1px solid #e2e8f0;
-      max-width:420px;
-      font-size:0.95rem;
-  ">
-    <p style="margin:0.2rem 0;">
-      <strong>Total visits:</strong> <span id="stats-total">Loading…</span>
-    </p>
-    <p style="margin:0.2rem 0;">
-      <strong>Today:</strong> <span id="stats-today">Loading…</span>
-    </p>
-    <p style="margin:0.2rem 0;">
-      <strong>This month:</strong> <span id="stats-month">Loading…</span>
-    </p>
-    <p style="margin:0.2rem 0;">
-      <strong>This year:</strong> <span id="stats-year">Loading…</span>
-    </p>
-    <p style="margin:0.4rem 0 0;">
-      <strong>Top country:</strong> <span id="stats-country">Loading…</span>
-    </p>
-  </div>
-</section>
-
-<script>
-(async () => {
-  const res = await fetch("https://ellimac-stats.camille-lanfredi.workers.dev/stats");
-  const s = await res.json();
-
-  const today = new Date();
-  const todayStr = today.toISOString().slice(0,10); // YYYY-MM-DD
-  const monthStr = today.toISOString().slice(0,7);  // YYYY-MM
-  const yearStr = today.getFullYear().toString();   // YYYY
-
-  const total = s.total ?? 0;
-
-  const dailyResults    = s.daily?.results    || [];
-  const monthlyResults  = s.monthly?.results  || [];
-  const countryResults  = s.countries?.results|| [];
-
-  const todayCount =
-    dailyResults.find(d => d.label === todayStr)?.c ?? 0;
-
-  const monthCount =
-    monthlyResults.find(m => m.label === monthStr)?.c ?? 0;
-
-  const yearCount = monthlyResults
-    .filter(m => m.label.startsWith(yearStr))
-    .reduce((sum, m) => sum + m.c, 0);
-
-  const topCountry = countryResults[0]?.country || "–";
-
-  document.getElementById("stats-total").textContent  = total;
-  document.getElementById("stats-today").textContent  = todayCount;
-  document.getElementById("stats-month").textContent  = monthCount;
-  document.getElementById("stats-year").textContent   = yearCount || "–";
-  document.getElementById("stats-country").textContent= topCountry;
-})();
-</script>
 
 
 <!--  -->
@@ -451,10 +390,110 @@
 })();
 </script>
 
+  <h2 style="font-size:1.4rem;font-weight:600;">Views globally</h2>
+  <div id="stats-card" style="
+      margin-top:0.75rem;
+      padding:1rem 1.4rem;
+      border-radius:12px;
+      background:#f8fafc;
+      border:1px solid #e2e8f0;
+      max-width:420px;
+      font-size:0.95rem;
+  ">
+    <p style="margin:0.2rem 0;">
+      <strong>Total visits:</strong> <span id="stats-total">Loading…</span>
+    </p>
+    <p style="margin:0.2rem 0;">
+      <strong>Today:</strong> <span id="stats-today">Loading…</span>
+    </p>
+    <p style="margin:0.2rem 0;">
+      <strong>This month:</strong> <span id="stats-month">Loading…</span>
+    </p>
+    <p style="margin:0.2rem 0;">
+      <strong>This year:</strong> <span id="stats-year">Loading…</span>
+    </p>
+    <p style="margin:0.4rem 0 0;">
+      <strong>Top country:</strong> <span id="stats-country">Loading…</span>
+    </p>
+  </div>
+  </section>
+
+<section style="margin-bottom:2rem;">
+  <h2 style="font-size:1.4rem;font-weight:600;">Views by page</h2>
+
+  <table id="views-by-page" style="
+      margin-top:0.75rem;
+      border-collapse:collapse;
+      width:100%;
+      max-width:420px;
+      font-size:0.9rem;
+  ">
+    <thead>
+      <tr>
+        <th style="text-align:left;padding:0.4rem;border-bottom:1px solid #e2e8f0;">Page</th>
+        <th style="text-align:right;padding:0.4rem;border-bottom:1px solid #e2e8f0;">Views</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
 
 
-<img src="https://ellimac-stats.camille-lanfredi.workers.dev/hit"
+<script>
+(async () => {
+  const res = await fetch("https://ellimac-stats.camille-lanfredi.workers.dev/stats");
+  const s = await res.json();
+
+  const today = new Date();
+  const todayStr = today.toISOString().slice(0,10); // YYYY-MM-DD
+  const monthStr = today.toISOString().slice(0,7);  // YYYY-MM
+  const yearStr = today.getFullYear().toString();   // YYYY
+
+  const total = s.total ?? 0;
+
+const dailyResults    = s.daily?.results    || [];
+const monthlyResults  = s.monthly?.results  || [];
+const countryResults  = s.countries?.results|| [];
+const pageResults     = s.pages?.results    || []; 
+
+
+  const todayCount =
+    dailyResults.find(d => d.label === todayStr)?.c ?? 0;
+
+  const monthCount =
+    monthlyResults.find(m => m.label === monthStr)?.c ?? 0;
+
+  const yearCount = monthlyResults
+    .filter(m => m.label.startsWith(yearStr))
+    .reduce((sum, m) => sum + m.c, 0);
+
+  const topCountry = countryResults[0]?.country || "–";
+
+  document.getElementById("stats-total").textContent  = total;
+  document.getElementById("stats-today").textContent  = todayCount;
+  document.getElementById("stats-month").textContent  = monthCount;
+  document.getElementById("stats-year").textContent   = yearCount || "–";
+  document.getElementById("stats-country").textContent= topCountry;
+
+    // ----- VUES PAR PAGE -----
+  const tbody = document.querySelector("#views-by-page tbody");
+  tbody.innerHTML = "";
+
+  pageResults.forEach(p => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td style="padding:0.35rem 0.4rem;">${p.path}</td>
+      <td style="padding:0.35rem 0.4rem;text-align:right;">${p.c}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+})();
+</script>
+
+
+<img src="https://ellimac-stats.camille-lanfredi.workers.dev/hit?p=/stats"
      style="display:none;" alt="">
+
 
 </div>
     <!-- FOOTER -->
