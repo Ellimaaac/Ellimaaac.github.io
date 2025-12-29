@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ELLIMAC | Data Analyst Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+    /* === BASE === */
+    body {
+      margin: 0;
+      background: #f6f7fa;
+      color: #1b1f24;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    /* === HEADER === */
+    header {
+      background: #111827;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* === MAIN CONTENT === */
+    .container {
+      max-width: 850px;
+      margin: 3rem auto;
+      background: #ffffff;
+      padding: 3rem 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    h1, h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.4rem; }
+
+    p, ul {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    a.link {
+      color: #1e40af;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a.link:hover {
+      text-decoration: underline;
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 3rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="logo">ELLIMAC | Data Analyst</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="analyses.html">Analyses</a>
+      <a href="datasets.html">Datasets</a>
+      <a href="stats.html">Stats</a>
+    </nav>
+  </header>
+
+
+  <!-- === MAIN PAGE === -->
+  <div class="container">
+
+    <!-- HOME INTRO -->
+    <h1>Welcome to my Data Analytics Portfolio</h1>
+    <p>
+      On this website, I share my personal data projects, analyses, and datasets.
+      Whether you're here to learn, explore, or gain inspiration, I hope my work provides value and sparks new ideas..<br>
+      Use the navigation menu above to explore my work.
+    </p>
+
+  <p>
+
+    </p>
+
+    <!-- ABOUT -->
+    <h2>About Me</h2>
+    <p>
+    I am an Electronic Engineer specialized in Radio Frequency and Hyper Frequency systems.
+    </p>
+
+    <p>
+    Outside of engineering, I explore data analysis to uncover insights and trends,
+    creating datasets and analytical projects that I share with others.
+    </p>
+
+    <!-- INTERESTS -->
+    <h2>Interests</h2>
+    <ul>
+      <li>Semiconductors industry analysis</li>
+      <li>Business analytics</li>
+      <li>Games statistics & data</li>
+    </ul>
+
+
+    <!-- CONTACT -->
+    <h2>Contact</h2>
+    <p>
+      💼 LinkedIn: <a class="link" href="https://www.linkedin.com/in/camille-lanfredi-461030229/" target="_blank">LinkedIn Profile</a><br>
+      🛠️ GitHub: <a class="link" href="https://github.com/Ellimaaac" target="_blank">GitHub Profile</a><br>
+      📊 Kaggle: <a class="link" href="https://www.kaggle.com/ellimaaac" target="_blank">Kaggle Profile</a>
+    </p>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © <span id="year"></span> ELLIMAC — All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+<img src="https://ellimac-stats.camille-lanfredi.workers.dev/hit"
+     style="display:none;" alt="">
+
+</body>
+</html>
