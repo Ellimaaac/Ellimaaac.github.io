@@ -390,6 +390,10 @@
 })();
 </script>
 
+
+<!--  -->
+<!-- Views globally -->
+<!--  -->
   <h2 style="font-size:1.4rem;font-weight:600;">Views globally</h2>
   <div id="stats-card" style="
       margin-top:0.75rem;
@@ -418,7 +422,11 @@
   </div>
   </section>
 
-<section style="margin-bottom:2rem;">
+<!--  -->
+<!-- Views by page -->
+<!--  -->
+
+<!-- <section style="margin-bottom:2rem;">
   <h2 style="font-size:1.4rem;font-weight:600;">Views by page</h2>
 
   <table id="views-by-page" style="
@@ -436,7 +444,7 @@
     </thead>
     <tbody></tbody>
   </table>
-</section>
+</section> -->
 
 
 <script>
@@ -475,18 +483,18 @@ const pageResults     = s.pages?.results    || [];
   document.getElementById("stats-year").textContent   = yearCount || "–";
   document.getElementById("stats-country").textContent= topCountry;
 
-    // ----- VUES PAR PAGE -----
-  const tbody = document.querySelector("#views-by-page tbody");
-  tbody.innerHTML = "";
+  //   // ----- VUES PAR PAGE -----
+  // const tbody = document.querySelector("#views-by-page tbody");
+  // tbody.innerHTML = "";
 
-  pageResults.forEach(p => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td style="padding:0.35rem 0.4rem;">${p.path}</td>
-      <td style="padding:0.35rem 0.4rem;text-align:right;">${p.c}</td>
-    `;
-    tbody.appendChild(tr);
-  });
+  // pageResults.forEach(p => {
+  //   const tr = document.createElement("tr");
+  //   tr.innerHTML = `
+  //     <td style="padding:0.35rem 0.4rem;">${p.path}</td>
+  //     <td style="padding:0.35rem 0.4rem;text-align:right;">${p.c}</td>
+  //   `;
+  //   tbody.appendChild(tr);
+  // });
 })();
 </script>
 
