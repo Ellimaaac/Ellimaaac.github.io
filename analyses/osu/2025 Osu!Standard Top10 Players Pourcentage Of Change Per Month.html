@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ELLIMAC | Data Analyst Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+    /* === BASE === */
+    body {
+      margin: 0;
+      background: #f6f7fa;
+      color: #1b1f24;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    /* === HEADER === */
+    header {
+      background: #111827;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* === MAIN CONTENT === */
+    .container {
+      max-width: 850px;
+      margin: 3rem auto;
+      background: #ffffff;
+      padding: 3rem 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    h1, h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.4rem; }
+
+    p, ul {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    a.link {
+      color: #1e40af;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a.link:hover {
+      text-decoration: underline;
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 3rem;
+    }
+
+  </style>
+    <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="logo">ELLIMAC | Data Analyst</div>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../analyses.html">Analyses</a>
+        <a href="../datasets.html">Datasets</a>
+        <a href="../stats.html">Stats</a>
+    </nav>
+  </header>
+
+<body>
+<div class="panel">
+    <h2>2025 Osu!Standard Top 10 Players - PP Growth (%) Per Month</h2>
+    <canvas id="chart" height="120"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const months = ["Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+    // ---- Données de tous les joueurs (valeurs mensuelles en décimal) ----
+    const playersData = {
+      "acoolibed":     [0.003748376, 0.03885972,  0.000177955, 0,           0.000355847, 0.002615431, 0.060863688, 0.008762249, 0.022411564, -0.014851325, -0.006583062],
+      "bored yes":     [0.010264508,-0.030500801, 0.008863462, 0.01257937,  0.011476574, 0.008825993, 0.002417437, 0.007865515, 0.003289977, -0.033058797, 0.000157735],
+      "filippu":       [0.003375681, 0.0000361755,0.038778579, 0.00100899,  0.009288572, 0.002618884, 0.000275748, 0.000584273, 0.002610518, -0.021720511, 0],
+      "gnahus":        [0.003441025,-0.035130561, 0.002487857, 0.037540377, 0.005505144, 0.003266379, 0.005701556, 0.003368011, 0.000261077, -0.0315448,   0.000962538],
+      "jappa dekappa": [0.004844538,-0.030863466, 0.012681455, 0,           0.005194282, 0.00608073,  0.01321904,  0.001113364, 0.00271001,  -0.04169459,  0.003352927],
+      "lifeline":      [0.01086696, 0.003557031, 0.013823251, 0.009752223, 0.007424279, 0.010243327, 0.00282583,  0.004842727, 0.000412634, -0.015298661, 0.018430372],
+      "milosz":        [0.005079735, 0.03554414,  0.005720686, 0.037470167, 0.017571706, 0.004402,    0.009823236, 0.002562769, 0.00044456,  -0.02273653,  0.000189459],
+      "mrekk":         [0.002949395,-0.019006346, 0.017639077, 0.004527132, 0.004259785, 0.004456876, 0,           0.01413752,  0,           -0.042485139, 0.000248592],
+      "ninerik":       [0.009600347, 0.052239951, 0.029270249, 0.006465444, 0.012386808, 0.027273719, 0.017721683, 0.003756649, 0.032126652, -0.019093155, 0.000228999],
+      "nyanpotato":    [-0.034791923,0.029098977, 0.036544452, 0.004392556, 0,           0.012109405, 0.004625828, 0.002107775, 0.000263882, 0,            0],
+      "sytho":         [0.0000473911,0.008719553, 0,           0.002630837, 0.072205042, 0.067265714, 0.0310274,   0.013423352, 0.009365938, 0.031292464, 0],
+      "toro019":       [0.140378221, 0.048565492, 0.029066736, 0.016466118, 0.049636552, 0.034504531, 0.065453106, 0.00193875,  0.044325796, 0.065159209, 0.000773121]
+    };
+
+
+    // Palette de couleurs (tourne si plus de joueurs)
+    const colors = [
+        "#0094ff","#ff6b6b","#ffae00","#33ff66",
+        "#9b59b6","#e67e22","#1abc9c","#f1c40f",
+        "#2ecc71","#bdc3c7","#e84393","#8e44ad"
+    ];
+
+    // --------- COURBES JOUEURS ----------
+    const playerDatasets = Object.keys(playersData).map((name,i)=>({
+        label: name,
+        data: playersData[name].map(v => v * 100),  // % sur l’axe Y
+        borderColor: colors[i % colors.length],
+        backgroundColor: colors[i % colors.length],
+        tension: 0.25,
+        borderWidth: 2,
+        pointRadius: 3,
+        pointHoverRadius: 5
+    }));
+
+    // ---------- PLUGIN POUR LES REWORKS (traits + texte centré) ----------
+// ---------- PLUGIN POUR LES REWORKS (traits + texte) ----------
+const reworkPlugin = {
+    id: "reworkPlugin",
+    afterDraw(chart) {
+        const reworkMonths = ["Mar","Nov"];
+
+        const ctx2   = chart.ctx;
+        const xScale = chart.scales.x;
+        const yScale = chart.scales.y;
+        const area   = chart.chartArea;
+
+        const yBottom  = area.bottom;   // bas de la zone du graphe
+        const yTopLine = area.top;      // haut de la zone du graphe
+        const yText    = area.top - 4;
+
+        ctx2.save();
+        ctx2.strokeStyle = "#000";   // <<< NOIR
+        ctx2.fillStyle   = "#000";   // <<< NOIR
+        ctx2.setLineDash([6,4]);
+        ctx2.lineWidth   = 1;
+        ctx2.font        = "12px Arial";
+        ctx2.textAlign   = "center";
+
+        const xMar = xScale.getPixelForValue("Mar");
+        const xApr = xScale.getPixelForValue("Apr");
+        const dx   = xApr - xMar;
+        const offset = dx * 0.25;
+
+        reworkMonths.forEach(month => {
+            const xCenter = xScale.getPixelForValue(month);
+            const xLeft   = xCenter - offset;
+            const xRight  = xCenter + offset;
+
+            ctx2.beginPath();
+            ctx2.moveTo(xLeft, yBottom);
+            ctx2.lineTo(xLeft, yTopLine);
+            ctx2.stroke();
+
+            ctx2.beginPath();
+            ctx2.moveTo(xRight, yBottom);
+            ctx2.lineTo(xRight, yTopLine);
+            ctx2.stroke();
+
+            const xText = (xLeft + xRight) / 2;
+            ctx2.setLineDash([]);
+            ctx2.fillText("REWORK", xText, yText);
+            ctx2.setLineDash([6,4]);
+        });
+
+        ctx2.restore();
+    }
+};
+
+
+    Chart.register(reworkPlugin);
+
+    // ---------- GRAPHIQUE ----------
+    const ctx = document.getElementById("chart").getContext("2d");
+    const chart = new Chart(ctx,{
+        type: "line",
+        data: {
+            labels: months,
+            datasets: playerDatasets
+        },
+options: {
+    responsive: true,
+    plugins: {
+        legend: {
+            position: "bottom",
+            align: "center",
+            labels: {
+                color: "#111",    // NOIR
+                boxWidth: 18
+            }
+        },
+        tooltip: {
+            callbacks: {
+                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}%`
+            }
+        }
+    },
+    scales: {
+        x: {
+            type: "category",
+            labels: months,
+            ticks: { color: "#111" },    // NOIR
+            grid:  { color: "#aaa" }     // GRIS PLUS CLAIR
+        },
+        y: {
+            ticks: {
+                color: "#111",           // NOIR
+                callback: v => v.toFixed(1) + "%"
+            },
+            grid: { color: "#aaa" },     // GRIS PLUS CLAIR
+            suggestedMin: -6,
+            suggestedMax: 8
+        }
+    }
+}
+
+    });
+</script>
+
+<img src="https://ellimac-stats.camille-lanfredi.workers.dev/hit?p=/osu/2025 Osu!Standard Top10 Players Pourcentage Of Change Per Month"
+     style="display:none;" alt="">
+
+</body>
+</html>
