@@ -153,6 +153,118 @@
   </div>
 
 
+      <!-- ==== FEEDBACK / UPVOTE SECTION ==== -->
+    <section style="
+        margin-top:2.5rem;
+        padding:1.5rem;
+        border-radius:12px;
+        background:#f8fafc;
+        border:1px solid #e2e8f0;
+        text-align:center;
+    ">
+      <h2 style="margin-top:0;">Appreciate my work ?</h2>
+      <p style="color:#4b5563; font-size:0.95rem;">
+        If you enjoy my projects or find them useful, give it an upvote!
+      </p>
+
+      <button id="upvote-btn" style="
+          cursor:pointer;
+          padding:0.6rem 1.3rem;
+          border:none;
+          border-radius:8px;
+          font-size:1rem;
+          background:#ff4500;
+          color:white;
+          font-weight:600;
+          display:inline-flex;
+          align-items:center;
+          gap:0.4rem;
+          transition:transform .15s ease, background .15s ease;
+      ">
+        <span>🔥</span>
+        <span>Upvote</span>
+      </button>
+
+      <!-- compteur live -->
+      <div id="upvote-count" style="margin-top:0.4rem;color:#6b7280;font-size:0.9rem;">
+        Loading upvotes…
+      </div>
+
+      <p id="upvote-msg" style="margin-top:0.6rem; color:#10b981; display:none;">
+        Thanks! Your feedback means a lot ❤️
+      </p>
+    </section>
+
+
+<script>
+  const STATS_BASE = "https://ellimac-stats.camille-lanfredi.workers.dev";
+  const STORAGE_KEY = "ellimac_upvoted_v1";
+
+  const btn = document.getElementById("upvote-btn");
+  const msg = document.getElementById("upvote-msg");
+  const countEl = document.getElementById("upvote-count");
+
+  let hasUpvoted = false;
+
+  function applyUpvoteState() {
+    if (hasUpvoted) {
+      btn.disabled = true;
+      btn.style.opacity = "0.7";
+      btn.style.cursor = "default";
+      msg.style.display = "block";
+      msg.textContent = "You already upvoted, thank you! ❤️";
+    } else {
+      btn.disabled = false;
+      btn.style.opacity = "1";
+      btn.style.cursor = "pointer";
+      msg.style.display = "none";
+    }
+  }
+
+  async function refreshUpvotes() {
+    try {
+      const res = await fetch(`${STATS_BASE}/likes`);
+      const data = await res.json();
+      const n = data.count ?? 0;
+      const label = n === 1 ? "upvote" : "upvotes";
+      countEl.textContent = `${n} ${label}`;
+    } catch (e) {
+      console.error("Failed to load likes", e);
+      countEl.textContent = "Upvotes unavailable";
+    }
+  }
+
+  // --- Initialisation ---
+  (function initUpvote() {
+    // On regarde si l'utilisateur a déjà upvote dans ce navigateur
+    hasUpvoted = localStorage.getItem(STORAGE_KEY) === "1";
+    applyUpvoteState();
+    refreshUpvotes();
+  })();
+
+  // --- Clic sur le bouton ---
+  btn.addEventListener("click", async () => {
+    if (hasUpvoted) {
+      // sécurité si on spamme quand même
+      return;
+    }
+
+    try {
+      await fetch(`${STATS_BASE}/hit?p=/like`, { mode: "no-cors" });
+
+      hasUpvoted = true;
+      localStorage.setItem(STORAGE_KEY, "1");
+      applyUpvoteState();
+      await refreshUpvotes();
+    } catch (e) {
+      console.error(e);
+    }
+  });
+</script>
+
+
+
+
   <!-- FOOTER -->
   <footer>
     © <span id="year"></span> ELLIMAC — All rights reserved.
