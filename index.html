@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ELLIMAC | Data Analyst Portfolio</title>
+  <title>ELLIMAC | Engineer & Analyst</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
 
@@ -97,11 +97,13 @@
 
   <!-- NAVIGATION -->
   <header>
-    <div class="logo">ELLIMAC | Data Analyst</div>
+    <div class="logo">ELLIMAC | Engineer & Analyst</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="analyses.html">Analyses</a>
       <a href="datasets.html">Datasets</a>
+      <a href="softwares.html">Softwares</a>
+      <a href="https://github.com/Ellimaaac?tab=repositories">Projects</a>      
       <a href="stats.html">Stats</a>
     </nav>
   </header>
@@ -111,9 +113,9 @@
   <div class="container">
 
     <!-- HOME INTRO -->
-    <h1>Welcome to my Data Analytics Portfolio</h1>
+    <h1>Welcome</h1>
     <p>
-      On this website, I share my personal data projects, analyses, and datasets.
+      On this website, I share my personal projects, analyses, and datasets.
       Whether you're here to learn, explore, or gain inspiration, I hope my work provides value and sparks new ideas..<br>
       Use the navigation menu above to explore my work.
     </p>
@@ -125,21 +127,14 @@
     <!-- ABOUT -->
     <h2>About Me</h2>
     <p>
-    I am an Electronic Engineer specialized in Radio Frequency and Hyper Frequency systems.
+      I’m Camille, an Electronic Engineer specialized in Radio Frequency and Hyper Frequency systems.
     </p>
-
     <p>
-    Outside of engineering, I explore data analysis to uncover insights and trends,
-    creating datasets and analytical projects that I share with others.
+      I also have a strong interest in data science and AI, especially in creating, exploring, and visualizing datasets. I share some of my work on Github and Kaggle.
     </p>
-
-    <!-- INTERESTS -->
-    <h2>Interests</h2>
-    <ul>
-      <li>Semiconductors industry analysis</li>
-      <li>Business analytics</li>
-      <li>Games statistics & data</li>
-    </ul>
+    <p>
+      I also enjoy working on audio-focused side projects.
+    </p>
 
 
     <!-- CONTACT -->
@@ -151,76 +146,6 @@
     </p>
 
   </div>
-
-
-<script>
-  const STATS_BASE = "https://ellimac-stats.camille-lanfredi.workers.dev";
-  const STORAGE_KEY = "ellimac_upvoted_v1";
-
-  const btn = document.getElementById("upvote-btn");
-  const msg = document.getElementById("upvote-msg");
-  const countEl = document.getElementById("upvote-count");
-
-  let hasUpvoted = false;
-
-  function applyUpvoteState() {
-    if (hasUpvoted) {
-      btn.disabled = true;
-      btn.style.opacity = "0.7";
-      btn.style.cursor = "default";
-      msg.style.display = "block";
-      msg.textContent = "You already upvoted, thank you! ❤️";
-    } else {
-      btn.disabled = false;
-      btn.style.opacity = "1";
-      btn.style.cursor = "pointer";
-      msg.style.display = "none";
-    }
-  }
-
-  async function refreshUpvotes() {
-    try {
-      const res = await fetch(`${STATS_BASE}/likes`);
-      const data = await res.json();
-      const n = data.count ?? 0;
-      const label = n === 1 ? "upvote" : "upvotes";
-      countEl.textContent = `${n} ${label}`;
-    } catch (e) {
-      console.error("Failed to load likes", e);
-      countEl.textContent = "Upvotes unavailable";
-    }
-  }
-
-  // --- Initialisation ---
-  (function initUpvote() {
-    // On regarde si l'utilisateur a déjà upvote dans ce navigateur
-    hasUpvoted = localStorage.getItem(STORAGE_KEY) === "1";
-    applyUpvoteState();
-    refreshUpvotes();
-  })();
-
-  // --- Clic sur le bouton ---
-  btn.addEventListener("click", async () => {
-    if (hasUpvoted) {
-      // sécurité si on spamme quand même
-      return;
-    }
-
-    try {
-      await fetch(`${STATS_BASE}/hit?p=/like`, { mode: "no-cors" });
-
-      hasUpvoted = true;
-      localStorage.setItem(STORAGE_KEY, "1");
-      applyUpvoteState();
-      await refreshUpvotes();
-    } catch (e) {
-      console.error(e);
-    }
-  });
-</script>
-
-
-
 
   <!-- FOOTER -->
   <footer>
@@ -236,4 +161,3 @@
 
 </body>
 </html>
-

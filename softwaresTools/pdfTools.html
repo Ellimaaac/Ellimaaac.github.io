@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Tools | ELLIMAC Engineer & Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f6f7fa;
+      color: #1b1f24;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: #111827;
+      color: #ffffff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      background: #ffffff;
+      padding: 3rem 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* TOOL CARD */
+    .tool-card {
+      margin-top: 1.5rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.4rem 1.6rem;
+      box-shadow: 0 4px 10px rgba(15,23,42,0.04);
+    }
+
+    .tool-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .tool-subtitle {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-bottom: 0.8rem;
+    }
+
+    .tool-tags {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.8rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #1e3a8a;
+      white-space: nowrap;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 3rem;
+    }
+    .software-thumb {
+      width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+
+  <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="logo">ELLIMAC | Engineer & Analyst</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../analyses.html">Analyses</a>
+      <a href="../datasets.html">Datasets</a>
+      <a href="../softwares.html">Softwares</a>
+      <a href="https://github.com/Ellimaaac?tab=repositories">Projects</a>
+      <a href="../stats.html">Stats</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+
+    <h1>PDF Tools</h1>
+    <p>
+      PDF Tools is a growing collection of offline desktop software designed for efficient
+      and privacy-friendly PDF manipulation.  
+      Each tool is lightweight, focused, and built to run entirely on your local machine.
+    </p>
+
+    <h2>Core Principles</h2>
+    <ul>
+      <li><strong>100% Offline</strong> – No file uploads, no cloud processing</li>
+      <li><strong>Privacy-first</strong> – Your documents never leave your system</li>
+      <li><strong>Fast & Lightweight</strong> – Minimal dependencies, instant execution</li>
+      <li><strong>Modular Design</strong> – Use only the tools you need</li>
+    </ul>
+
+    <h2>Available Tools</h2>
+
+    <h4 align="center">
+        <a href="#merge-pdf-images">Merge PDF & Images (Image Converter)</a>
+        <span> | </span>
+        <a href="#page-reorder">PDF Page Reorder</a>
+        <span> | </span>
+        <a href="#pdf-splitter">PDF Splitter</a>
+        <span> | </span>
+        <a href="#coming-tools">Coming Tools</a>
+    </h4>
+
+    <!-- TOOL 1 -->
+    <div class="tool-card" id="merge-pdf-images">
+      <div class="tool-title">Merge PDF & Images</div>
+      <div class="tool-subtitle">Create a single PDF from images and existing PDF files</div>
+
+      <div class="tool-tags">
+        <span class="tag">PDF</span>
+        <span class="tag">Images</span>
+        <span class="tag">Offline</span>
+        <span class="tag">Desktop</span>
+      </div>
+
+      <p>
+        This tool allows you to assemble a final PDF document from images and PDF files
+        with full control over page order and output configuration.
+      </p>
+
+      <ul>
+        <li>Merge images and PDF files into a single PDF</li>
+        <li>Generate from a folder or from selected files</li>
+        <li>Manual page reordering</li>
+        <li>Live preview panel</li>
+        <li>Drag & drop support</li>
+        <li>Custom output path and file name</li>
+        <li>Fully offline processing</li>
+      </ul>
+
+        <div class="carousel">
+            <img src="../img/MergePDF.png" alt="merge tool" class="software-thumb">
+        </div>
+
+    <p>
+        Typical use cases include document scanning, report assembly, and quick PDF generation
+        without relying on online services.
+    </p>
+    </div>
+
+    <!-- TOOL 2 -->
+    <div class="tool-card" id="page-reorder">
+      <div class="tool-title">PDF Page Reorder</div>
+      <div class="tool-subtitle">Rearrange pages within an existing PDF document</div>
+
+      <div class="tool-tags">
+        <span class="tag">PDF</span>
+        <span class="tag">Reorder</span>
+        <span class="tag">Offline</span>
+        <span class="tag">Desktop</span>
+      </div>
+
+      <p>
+        This tool enables you to easily change the order of pages in a PDF file.
+        Simply load your PDF, drag and drop pages to rearrange them, and save the new document.
+      </p>
+
+      <ul>
+        <li>Load any PDF file</li>
+        <li>Drag & drop pages to reorder</li>
+        <li>Preview changes in real-time</li>
+        <li>Save reordered PDF to a new file</li>
+        <li>Completely offline operation</li>
+      </ul>
+
+        <div class="carousel">
+            <img src="../img/PageReorder.png" alt="page reorder tool" class="software-thumb">
+        </div>
+
+        <p><em>Status: On Going</em></p>
+    </div>
+
+    <!-- TOOL 3 -->
+    <div class="tool-card" id="pdf-splitter">
+        <div class="tool-title">PDF Splitter</div>
+        <div class="tool-subtitle">Split a PDF into multiple documents</div>
+
+        <p>
+            Extract pages or ranges from an existing PDF into separate files.
+        </p>
+
+        <p><em>Status: Planned</em></p>
+    </div>
+
+<h2 id="coming-tools">Coming Tools</h2>
+<ul>
+  <li>PDF compression</li>
+  <li>Metadata editor</li>
+</ul>
+
+    </div>
+    
+    <!-- FOOTER -->
+    <footer>
+        © <span id="year"></span> ELLIMAC — All rights reserved.
+    </footer>
+
+    <img src="https://ellimac-stats.camille-lanfredi.workers.dev/hit?p=/softwaresTools/pdfTools"
+     style="display:none;" alt="">
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
