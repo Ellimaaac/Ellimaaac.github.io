@@ -308,6 +308,57 @@
     <!-- ANALYSES LIST -->
     <div class="analyses-list">
 
+
+
+
+      <!-- ===== WAFER SEMICONDUCTORS ===== -->
+      <article class="analysis-card" data-domain="semiconductors">
+        <div class="analysis-header">
+          <div class="analysis-title">Wafer Defect Detection</div>
+          <span class="analysis-domain">Semiconductors · wafer</span>
+        </div>
+        <div class="analysis-meta">
+          <span class="analysis-date">Published: Apr 2026</span> ·
+          Based on:  Wafer's Wafer Defects datasets (Reference dataset)
+        </div>
+        <p>
+          Development of a computer vision model designed to automatically detect,
+          classify and segment surface defects in semiconductor wafer inspection images.
+          The project covers several types of manufacturing anomalies, including scratches,
+          particles, block-etch defects, coating issues, contamination and burnt areas.
+        </p>
+        <p>
+          The complete workflow includes image and annotation preparation, dataset
+          visualization, model training and inference on unseen wafer images. The trained
+          model achieved a mAP@50 of 72.5%, with 66.8% precision and 74.6% recall,
+          demonstrating its ability to localize defects using pixel-level segmentation masks.
+        </p>
+        <!-- CAROUSEL (4 graphs / 4 modes) -->
+        <div class="carousel">
+          <img src="img/wafer/__results___8_0.png">
+          <img src="img/wafer/wafer.png" >
+
+
+          <div class="carousel-controls">
+            <button class="carousel-btn" data-dir="prev">&#9664;</button>
+            <button class="carousel-btn" data-dir="next">&#9654;</button>
+          </div>
+
+          <div class="carousel-dots">
+            <span class="carousel-dot active"></span>
+            <span class="carousel-dot"></span>
+            <span class="carousel-dot"></span>
+            <span class="carousel-dot"></span>
+          </div>
+        </div>
+
+        <div class="analysis-links">
+          <a class="link" href="https://www.kaggle.com/code/ellimaaac/wafer-defect-model" target="_blank">View notebook</a>
+          <a class="link" href="https://www.kaggle.com/datasets/ellimaaac/wafer-defects-images-annotations-model" target="_blank">Related dataset</a>
+          <a class="link" href="https://universe.roboflow.com/wafer-irhuv/wafer-defect-rv1vx" target="_blank">Reference dataset</a>
+        </div>
+      </article>
+      
             <!--Beatmap-->
       <article class="analysis-card" data-domain="games" data-game="osu">
         <div class="analysis-header">
