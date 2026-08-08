@@ -1,4 +1,4 @@
 # [Portfolio Website](https://ellimaaac.github.io/index.html)
 
 
-Data analysis work, nothing related to RF
+Data analysis work, few related to RF
